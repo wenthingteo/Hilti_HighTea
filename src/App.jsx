@@ -7,20 +7,8 @@ import AppNav from "./navigation/AppNav";
 // const clientId = "293042637519-berhpp046ij2pndgr3e42jf8obnt3rko.apps.googleusercontent.com";
 
 function App() {
-    useEffect(() => {
-        function start() {
-            // gapi.client.init({
-            //     clientId: clientId,
-            //     scope: ""
-            // })
-        };
-        // gapi.load('client:auth2', start);
-    });
 
     return (
-        // <GlobalState>
-        //     <AppNav />
-        // </GlobalState>
         <AppNav />
     );
 }
