@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import hiltilogo from "../assets/hiltilogo.png";
-import testimg from "../assets/gcp1.jpg";
+import hiltiLogo from '../assets/hiltilogo.png';
 
 function Navbar() {
     // const navigation = useNavigate();
@@ -32,10 +31,10 @@ function Navbar() {
             <div className="max-w-screen-xl flex flex-row justify-between items-center mx-auto p-4">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img 
-                        src={testimg} 
-                        alt="hilti logo" 
-                        className="h-10" 
-                        // onClick={goToHome}
+                        // src={hiltiLogo } 
+                        // alt="hilti logo" 
+                        // className="h-10" 
+                        // // onClick={goToHome}
                     />
 
                     <div
@@ -43,6 +42,16 @@ function Navbar() {
                         id="navbar_sticky"
                     >
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                            <li>
+                                <button
+                                    // onClick={goToHome}
+                                    type="button"
+                                    className="text-white text-2xl bg-[#D2051E] font-bold rounded text-md px-5 py-1 text-center active:text-[#D2051E]"
+                                >
+                                    HILTI
+                                </button>
+                            </li>
+                            
                             <li>
                                 <button
                                     // onClick={goToMockIV}
