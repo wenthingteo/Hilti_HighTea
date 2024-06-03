@@ -33,7 +33,7 @@ function Navbar() {
                 <div className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img 
                         src={testimg} 
-                        alt="fucker image" 
+                        alt="hilti logo" 
                         className="h-10" 
                         // onClick={goToHome}
                     />
