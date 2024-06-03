@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Mock-Interviews-with-AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mock-Interviews-with-AI is a voice-to-ai-to-voice application designed using React/Node, offering users an interactive and engaging job interview experience with AI. Practice your interview skills with real-time feedback and dynamic questioning.
 
-## Available Scripts
+- **Voice Interaction:** Voice chat with an AI interviewer.
+- **Job Description Summarization:** Parses a job description down to essential elements.
+- **Automatic Detection:** Turn-based voice interaction allows you and AI to go back and forth, allowing for conversations that feel natural.
+- **Customizable AI Personalities:** Choose from five AI personality types (Friendly, Formal, Challenging, Encouraging, Enthusiastic) to suit your preference and desired interview style.
+- **Question Categories:** Prepare well-rounded interview experience by exploring four question types (Technical, Behavioral, Situational, and Culture Fit) or limit the questioning to specific types.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+Ensure that you have the following prerequisites installed and set up on your system:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Node.js**: The application is built using Node.js, so you need to have it installed on your machine. You can download the latest version of Node.js from the [official website](https://nodejs.org/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Amazon AWS Polly API Key**: The voice output feature of the application utilizes Amazon AWS Polly, a text-to-speech service. To use AWS Polly, sign up for an AWS account, and follow the steps to create an IAM user with the required permissions. Once you have your IAM user, set up your AWS credentials in the `.env` file of the application. You can refer to the [official AWS Polly documentation](https://docs.aws.amazon.com/polly/latest/dg/get-started-quick.html) for more information.
 
-### `npm test`
+3. **OpenAI API Key**: The application requires an OpenAI API key for AI integration (Chat-GPT and Whisper Transcription). Sign up for an OpenAI account and obtain an API key from the [OpenAI Developer Dashboard](https://beta.openai.com/signup/). Once you have your API key, set it up in the `.env` file of the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+```bash
+# Clone repository
+git clone https://github.com/darrylschaefer/mock-interviews-with-ai
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Change directory
+cd mock-interviews-with-ai
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Add API keys to .env in root folder
+AMAZON_AWS_POLLY_ACCESS_KEY=
+AMAZON_AWS_POLLY_SECRET_KEY=
+OPENAI_API_KEY=
 
-### `npm run eject`
+# Build app
+npm run build
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Start app
+npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Open client
+Start your internet browser, and type in the address: http://localhost:3000
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started with the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Configure API keys:** Make sure your API keys are properly set up in the application.
 
-## Learn More
+2. **Generate job description:** Type or paste a job description in the prompt menu box and click "Save changes".
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Initiate a session:** Type your message in the text input and press enter, or click the microphone icon to send a voice message.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Understand the three phases:**
 
-### Code Splitting
+   - **User Input Phase:** The microphone is ready, it will capture your voice input to send it to the AI for processing once you begin talking.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   - **AI Processing phase:** Your recording is being handled by the APIs.
 
-### Analyzing the Bundle Size
+   - **AI Playing phase:** The generated response is played back to you.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. **Engage with the AI:** By default, the application will automatically cycle through the phases. Be ready to respond to AI when it's your turn.
 
-### Making a Progressive Web App
+6. **Control the pace (optional):** If you need more time to respond, disable Automatic Detection and manually put the application into standby mode by clicking the microphone button when it's your turn.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+7. **Speak in complete sentences:** For better transcription and understanding, use complete sentences when engaging with the AI.
 
-### Advanced Configuration
+## Options Menu
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Find the options menu below the console with these available features:
 
-### Deployment
+- **Abandon Session**: Reset the session
+- **Voices**: Change the AWS Polly voice
+- **Question Types**: The types of job interview questions you'll be asked. All selected by default.
+- **Personality Type**: The type of personality that the interviewer will have.
+- **Automatic Detection**: Sets recording mode to standby after AI finishes playing their audio prompt. If you turn this off, you will have to click the Microphone button after the AI has spoken in order to set the Mic to standby and begin a recording.
+- **Voice Threshold**: This slider sets the minimum volume level needed to trigger a recording from standby mode. Adjust based on background noise & experiment for best results.
+- **Mic Pause Timer**: This slider sets the delay after a recording dips below the Volume Threshold that will trigger an automatic completion of the user recording.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Microphone Statuses:
 
-### `npm run build` fails to minify
+1. **Orange Border**: _Standby mode_ - awaiting voice to surpass the Voice Threshold and initiate recording.
+2. **Red Border**: _Recording in progress_ - triggered by exceeding Voice Threshold, and will stop when volume falls below the threshold for the Mic Pause Timer duration.
+3. **Grey Border**: _Inactive_ - AI is currently processing the conversation.
+4. **White Border**: _Inactive_ - no session in progress.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Images
+
+<img src="https://github.com/darrylschaefer/mock-interviews-with-ai/assets/119073511/50b44684-5dfb-4de8-8bdf-8038fd9498b4)"></img>
+
