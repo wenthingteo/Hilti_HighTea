@@ -58,7 +58,7 @@ function Navbar() {
                                     type="button"
                                     className="text-black hover:text-[#FF0000] font-medium rounded-lg text-md px-4 py-2 text-center active:text-[#D2051E]"
                                 >
-                                    Mock Interview
+                                    Home
                                 </button>
                             </li>
                             <li>
@@ -67,7 +67,7 @@ function Navbar() {
                                     type="button"
                                     className="text-black hover:text-[#FF0000] font-medium rounded-lg text-md px-4 py-2 text-center active:text-[#D2051E]"
                                 >
-                                    AI Persona Mapping
+                                    Application History
                                 </button>
                             </li>
                             <li>
@@ -76,7 +76,7 @@ function Navbar() {
                                     type="button"
                                     className="text-black hover:text-[#FF0000] font-medium rounded-lg text-md px-4 py-2 text-center active:text-[#D2051E]"
                                 >
-                                    Job Recommendation
+                                    Hilti Mate
                                 </button>
                             </li>
                         </ul>
