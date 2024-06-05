@@ -1,8 +1,8 @@
 
 .Console
 {
-    background:var(--mauve12);
-    color:var(--mauve6);
+    background:#FFF6F7;
+    color:black;
     font-family:monospace;
     height:600px;
     width:1100px;
